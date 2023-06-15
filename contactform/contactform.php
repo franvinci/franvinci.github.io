@@ -1,23 +1,22 @@
 <?php
-// Get the form fields
-$name = $_POST['name'];
-$email = $_POST['email'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $subject = $_POST['subject'];
+  $message = $_POST['message'];
 
-// Create the email content
-$email_content = "Name: $name\n";
-$email_content .= "Email: $email\n";
-$email_content .= "Subject: $subject\n";
-$email_content .= "Message:\n$message\n";
+  // Set up the email
+  $to = 'vincifrancesco101@gmail.com';
+  $headers = "From: $email\r\n";
+  $headers .= "Reply-To: $email\r\n";
+  $headers .= "Content-Type: text/html\r\n";
+  $body = "Name: $name<br>Email: $email<br>Subject: $subject<br>Message: $message";
 
-// Send the email
-$to = 'fvinci@math.unipd.it'; // Change this to your email address
-$subject = 'New Contact Form Submission';
-$headers = "From: $email\n";
-$headers .= "Reply-To: $email\n";
-mail($to, $subject, $email_content, $headers);
+  // Send the email
+  $success = mail($to, $subject, $body, $headers);
 
-// Return success response
-echo 'OK';
+  if ($success) {
+    echo 'OK'; // Sending successful
+  } else {
+    echo 'Error sending email.'; // Sending failed
+  }
 ?>
