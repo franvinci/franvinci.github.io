@@ -836,7 +836,7 @@ a:hover {
     position: relative;
     border-radius: 50%;
     margin-top: 80px;
-    margin-left: -22px;
+    margin-left: -22px;   
   }
   
   .timeline li:before {
