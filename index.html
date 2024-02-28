@@ -24,6 +24,22 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
+  <style>
+    /* Custom styling for the specific list */
+    ol.custom-list {
+      list-style-type: none; /* Remove default numbering */
+      /* counter-reset: my-counter 0; */
+    }
+    ol.custom-list li {
+      counter-increment: my-counter; /* Increment the counter for this list */
+      margin-bottom: 10px; /* Add some spacing between list items */
+    }
+    ol.custom-list li:before {
+      content: "[" counter(my-counter) "]"; /* Use counter value as content */
+      margin-right: 5px; /* Add some spacing */
+    }
+  </style>
+
   <!-- =======================================================
     Theme Name: FraVinci
     Theme URL: https://bootstrapmade.com/FraVinci-bootstrap-portfolio-html-template/
@@ -340,8 +356,21 @@
               </h5>
             </div>
             <p class="lead">
-              <font color=#000000>Investigating the influence of data-aware process states on activity probabilities in simulation models: does accuracy improve?. Massimiliano de Leoni, Francesco Vinci, Sander J.J. Leemans, Felix Mannhardt. 21st International Conference on Business Process Management (BPM 2023).</font>
+              <ol class="custom-list">
+                <li><a href="https://doi.org/10.1007/978-3-031-41620-0_8"><i>Investigating the influence of data-aware process states on activity probabilities in simulation models: does accuracy improve?</i> Massimiliano de Leoni, Francesco Vinci, Sander J.J. Leemans, Felix Mannhardt. 21st International Conference on Business Process Management (BPM 2023). 2023.</a></li>
+              </ol>
             </p>
+            <!-- <div class="title-box-2">
+              <h5 class="title-left">
+                <br>
+                <font color=#B8141B>2024</font>
+              </h5>
+            </div>
+            <p class="lead">
+              <ol class="custom-list">
+                <li><a href="https://doi.org/10.1007/978-3-031-41620-0_8"><i>Investigating the influence of data-aware process states on activity probabilities in simulation models: does accuracy improve?</i> Massimiliano de Leoni, Francesco Vinci, Sander J.J. Leemans, Felix Mannhardt. 21st International Conference on Business Process Management (BPM 2023). 2023.</a></li>
+              </ol>
+            </p> -->
           </div>
         </div>
       </div>
