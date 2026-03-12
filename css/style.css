@@ -167,6 +167,28 @@ a:hover {
 
 /*--/ Title Left /--*/
 
+.experience-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.experience-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.experience-item .title-left {
+  margin-bottom: 1.5rem;
+}
+.experience-item .lead {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.exp-date {
+  color: #B8141B;
+  font-weight: 600;
+}
+
 .title-box-2 {
   margin-bottom: 3rem;
 }
@@ -742,138 +764,218 @@ a:hover {
 
 
 /*======================================
-//--//-->   TIMELINE
+//--//-->   TIMELINE (horizontal zig-zag → vertical alternating)
 ======================================*/
 
-.timeline {
-	width:800px;
-	height: 20px;
-	list-style: none;
-	text-align: justify;
-	margin: 80px auto;
-	background: #f5f5f5;
-	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgb(255, 255, 255) 51%, rgba(255,255,255,0) 57%, rgba(255,255,255,0) 100%);
+.tl-container {
+  padding: 2rem 3rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.3) transparent;
 }
 
-.timeline:after {display: inline-block; content: ""; width: 100%;}
+.tl-container::-webkit-scrollbar { height: 4px; }
+.tl-container::-webkit-scrollbar-track { background: transparent; }
+.tl-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 2px; }
 
-.timeline li {
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	background: #f5f5f5;
-  color: #f5f5f5;
-	text-align: center;
-	line-height: 1.2;
-	position: relative;
-	border-radius: 50%;
+/* ── HORIZONTAL desktop ── */
+.tl-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  min-width: 640px;
 }
 
-.timeline li:before {
-	display: inline-block;
-	content: attr(data-year);
-	font-size: 26px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+/* Connecting track line; top aligns with dot centres (slot-a = 5rem tall, dot = 16px) */
+.tl-track {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: calc(5rem + 7px);
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.35) 6%,
+    rgba(255,255,255,0.75) 25%,
+    #B8141B 50%,
+    rgba(255,255,255,0.75) 75%,
+    rgba(255,255,255,0.35) 94%,
+    transparent 100%
+  );
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(184,20,27,0.5);
 }
 
-.timeline li:nth-child(odd):before {
-	top: -40px;
-}
-.timeline li:nth-child(even):before {
-	bottom: -40px;
-}
-
-.timeline li:after {
-	display: inline-block;
-	content: attr(data-text);
-	font-size: 16px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+.tl-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 0 0.5rem;
+  cursor: default;
 }
 
-.timeline li:nth-child(odd):after {
-	bottom: 0;
-	margin-bottom: -10px;
-	transform: translate(-50%, 100%);
-}
-.timeline li:nth-child(even):after {
-	top: 0;
-	margin-top: -10px;
-	transform: translate(-50%, -100%);
+/* Slot A — above the dot (year for normal items, text for .tl-alt items) */
+.tl-slot-a {
+  height: 5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.55rem;
+  text-align: center;
 }
 
+/* Slot B — below the dot (text for normal items, year for .tl-alt items) */
+.tl-slot-b {
+  margin-top: 0.75rem;
+  min-height: 3.5rem;
+  max-width: 120px;
+  text-align: center;
+}
 
-@media (max-width: 600px) {
-  .timeline {
-    width: 10px;
-    height: 520px;
-    list-style: none;
-    text-align: justify;
-    margin: 20px auto;
-    /* background: #f5f5f5; */
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0) 45%,
-      rgb(255, 255, 255) 51%,
-      rgba(255, 255, 255, 0) 57%,
-      rgba(255, 255, 255, 0) 100%
+/* ── Dot ── */
+.tl-dot {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  border: 3px solid #B8141B;
+  box-shadow: 0 0 0 3px rgba(184,20,27,0.3), 0 0 10px rgba(184,20,27,0.5);
+  z-index: 2;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.tl-item:hover .tl-dot {
+  transform: scale(1.6);
+  background: #B8141B;
+  box-shadow: 0 0 0 5px rgba(184,20,27,0.35), 0 0 22px rgba(184,20,27,0.85);
+}
+
+.tl-now .tl-dot {
+  background: #B8141B;
+  border-color: #fff;
+  animation: tl-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes tl-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(184,20,27,0.4), 0 0 10px rgba(184,20,27,0.5); }
+  50%       { box-shadow: 0 0 0 9px rgba(184,20,27,0.15), 0 0 28px rgba(184,20,27,0.9); }
+}
+
+/* ── Year badge ── */
+.tl-year {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+  background: rgba(184,20,27,0.7);
+  padding: 4px 13px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  white-space: nowrap;
+  display: inline-block;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tl-item:hover .tl-year {
+  background: rgba(184,20,27,1);
+  box-shadow: 0 2px 12px rgba(184,20,27,0.55);
+}
+
+/* ── Description text ── */
+.tl-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.45;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.tl-text small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.58);
+  margin-top: 3px;
+  letter-spacing: 0.3px;
+}
+
+.tl-item:hover .tl-text       { color: #fff; }
+.tl-item:hover .tl-text small { color: rgba(255,255,255,0.88); }
+
+/* ── VERTICAL mobile — centered line, alternating left / right ── */
+@media (max-width: 767px) {
+  .tl-container {
+    padding: 1.5rem 0.5rem;
+    overflow-x: visible;
+  }
+
+  .tl-items {
+    flex-direction: column;
+    align-items: stretch;
+    min-width: unset;
+  }
+
+  /* Vertical line centred on the dot column */
+  .tl-track {
+    left: calc(50% - 1.5px);
+    right: auto;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    width: 3px;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(255,255,255,0.35) 6%,
+      rgba(255,255,255,0.75) 25%,
+      #B8141B 50%,
+      rgba(255,255,255,0.75) 75%,
+      rgba(255,255,255,0.35) 94%,
+      transparent 100%
     );
-    background-position: 5px 0;
-  }
-  
-  .timeline li {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: #f5f5f5;
-    color: #f5f5f5;
-    text-align: center;
-    line-height: 1.2;
-    position: relative;
-    border-radius: 50%;
-    margin-top: 80px;
-    margin-left: -22px;   
-  }
-  
-  .timeline li:before {
-    display: inline-block;
-    content: attr(data-year);
-    font-size: 26px;
-    position: absolute;
-    transform: translateY(100%) translateX(-50%);
-  }
-  
-  .timeline li:nth-child(odd):before {
-    left: -50px;
   }
 
-  .timeline li:nth-child(even):before {
-    bottom: 27px;
-    left: 64px;
-  }
-  
-  .timeline li:after {
-    display: inline-block;
-    content: attr(data-text);
-    font-size: 16px;
-    position: absolute;
-    /* transform: translateY(0%) translateX(-50%); */
-  }
-  
-  .timeline li:nth-child(odd):after {
-    left: 70px;
-    bottom: 40px;
+  /* 3-column grid: [slot-a] [dot] [slot-b]
+     Normal items : year LEFT  – text RIGHT
+     .tl-alt items: text LEFT  – year RIGHT  */
+  .tl-item {
+    display: grid;
+    grid-template-columns: 1fr 16px 1fr;
+    column-gap: 1rem;
+    align-items: center;
+    padding: 1.1rem 0;
+    flex: none;
   }
 
-  .timeline li:nth-child(even):after {
-    left: -50px;
-    bottom: 57px;
+  .tl-slot-a {
+    grid-column: 1;
+    height: auto;
+    display: block;
+    padding-bottom: 0;
+    justify-content: unset;
+    text-align: right;
   }
-  
+
+  .tl-dot {
+    grid-column: 2;
+    justify-self: center;
+  }
+
+  .tl-slot-b {
+    grid-column: 3;
+    margin-top: 0;
+    max-width: none;
+    min-height: unset;
+    text-align: left;
+  }
+
+  .tl-year  { font-size: 0.84rem; padding: 3px 9px; }
+  .tl-text  { font-size: 0.88rem; }
 }
 
 
