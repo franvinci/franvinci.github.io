@@ -184,14 +184,10 @@
       }
     }
 
-    // Swap hero photo with fade
+    // Swap hero photo
     const heroImg = document.querySelector('.hero-photo img');
     if (heroImg) {
-      heroImg.style.opacity = '0';
-      setTimeout(() => {
-        heroImg.src = mode === 'developer' ? 'img/frav_dev.png' : 'img/frav.png';
-        heroImg.onload = () => { heroImg.style.opacity = '1'; };
-      }, 120);
+      heroImg.src = mode === 'developer' ? 'img/frav_dev.png' : 'img/frav.png';
     }
   }
 

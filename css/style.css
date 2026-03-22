@@ -582,7 +582,6 @@ mark {
   box-shadow: var(--shadow-lg);
   object-fit: cover;
   object-position: top center;
-  transition: opacity 0.12s ease;
 }
 
 .scroll-hint {
