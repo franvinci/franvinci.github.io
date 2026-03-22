@@ -1563,7 +1563,9 @@ body[data-mode="developer"] .map-pin-card span {
   .nav-links { display: none; }
   .scroll-hint { display: none; }
 
-  .nav-toggle button { padding: 6px 14px; font-size: 0.7rem; }
+  .nav-toggle button { padding: 6px 14px; font-size: 0; }
+  .nav-toggle button[data-mode="researcher"]::after { content: "Res"; font-size: 0.7rem; }
+  .nav-toggle button[data-mode="developer"]::after { content: "Dev"; font-size: 0.7rem; }
 
   .mobile-toggle { display: none; }
 
