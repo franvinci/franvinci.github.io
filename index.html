@@ -2,624 +2,727 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>FraVinci Webpage</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="Francesco Vinci, process mining, data science, AI, University of Padua, process simulation" name="keywords">
-  <meta content="Francesco Vinci — AI and process science researcher at the University of Padua. Process mining, explainable AI, and data-driven simulation." name="description">
+  <title>Francesco Vinci — Webpage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Francesco Vinci — AI and process science researcher at the University of Padua. Process mining, explainable AI, and data-driven simulation.">
+  <meta name="keywords" content="Francesco Vinci, process mining, data science, AI, University of Padua, process simulation">
 
-  <!-- Favicons -->
-  <link href="img/FV.png" rel="icon">
-  <link href="img/FV.png" rel="apple-touch-icon">
+  <meta property="og:title" content="Francesco Vinci — Data & Process Science Researcher">
+  <meta property="og:description" content="Process mining, explainable AI, and data-driven simulation at the University of Padua.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/frav.png">
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicon.svg">
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <!-- Main Stylesheet File -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Stylesheets -->
   <link href="css/style.css" rel="stylesheet">
-
-  <style>
-    ol.custom-list {
-      list-style-type: none;
-    }
-    ol.custom-list li {
-      counter-increment: my-counter; /* Increment the counter for this list */
-      margin-bottom: 10px; /* Add some spacing between list items */
-    }
-    ol.custom-list li:before {
-      content: "[" counter(my-counter) "]"; /* Use counter value as content */
-      margin-right: 5px; /* Add some spacing */
-    }
-  </style>
-
-  <!-- =======================================================
-    Theme Name: FraVinci
-    Theme URL: https://bootstrapmade.com/FraVinci-bootstrap-portfolio-html-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
+  <link href="css/animations.css" rel="stylesheet">
 </head>
 
-<body id="page-top">
+<body>
 
-  <!--/ Nav Star /-->
-  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">FraVinci</a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <a href="#home" class="nav-logo">Francesco<span>Vinci</span></a>
+
+      <!-- DevPunks-style Toggle Switch -->
+      <div class="nav-toggle">
+        <div class="nav-toggle-bg"></div>
+        <button class="active" data-mode="researcher">Researcher</button>
+        <button data-mode="developer">Developer</button>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#cv">CV</a>
+        <a href="#publications" class="mode-researcher">Publications</a>
+        <a href="#software-tools" class="mode-developer">Software</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+
+      <button class="nav-hamburger" aria-label="Toggle menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll active" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#about">About me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#cv">CV</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#publications">Publications</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#software-tools">Software Tools</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#contact">Contact me</a>
-          </li>
-        </ul>
-      </div>
     </div>
   </nav>
-  <!--/ Nav End /-->
 
-  <!--/ Intro Skew Star /-->
-  <div id="home" class="intro route bg-image" style="background-image: url(img/intro-bg.png)">
-    <div class="overlay-itro"></div>
-    <div class="intro-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <h1 class="intro-title mb-4">I am Francesco Vinci</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Data Scientist,AI Researcher,Computer Scientist,Process Miner,Mathematician</span><strong class="text-slider"></strong></p>
+  <!-- Mobile Full-Screen Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-toggle">
+      <div class="nav-toggle">
+        <div class="nav-toggle-bg"></div>
+        <button class="active" data-mode="researcher">Researcher</button>
+        <button data-mode="developer">Developer</button>
+      </div>
+    </div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#cv">CV</a>
+    <a href="#publications" class="mode-researcher">Publications</a>
+    <a href="#software-tools" class="mode-developer">Software</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ===== Hero ===== -->
+  <div class="hero" id="home">
+    <div class="hero-blob"></div>
+    <div class="container">
+      <div class="hero-text">
+        <h1>Data & Process Science <mark>Researcher</mark></h1>
+        <p class="hero-subtitle"><span class="typed-text"></span><span class="cursor"></span></p>
+        <p class="hero-desc">
+          I bridge <b>process mining</b>, <b>machine learning</b>, and <b>explainable AI</b> to enable transparent what-if and prescriptive analytics, with applications in healthcare and industry.
+        </p>
+        <div class="hero-badges">
+          <span class="badge badge-carmine">Process Mining</span>
+          <span class="badge">Explainable AI</span>
+          <span class="badge">Data-Driven Simulation</span>
+          <span class="badge">Machine Learning</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#publications" class="btn btn-primary hero-cta-main">
+            <svg class="hero-cta-icon-pub" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <svg class="hero-cta-icon-sw" style="display:none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <span class="hero-cta-label">Publications</span>
+          </a>
+          <a href="files/CV.pdf" download class="btn btn-outline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="img/frav.png" alt="Francesco Vinci">
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll for more</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+
+  <!-- ===== Marquee Ticker ===== -->
+  <div class="marquee">
+    <div class="marquee-track mode-researcher">
+      <div class="marquee-content">
+        <span>Process Mining</span>
+        <span>Explainable AI</span>
+        <span>Data Science</span>
+        <span>Machine Learning</span>
+        <span>Business Process Simulation</span>
+        <span>Healthcare AI</span>
+        <span>XAI</span>
+        <span>BPM</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span>Process Mining</span>
+        <span>Explainable AI</span>
+        <span>Data Science</span>
+        <span>Machine Learning</span>
+        <span>Business Process Simulation</span>
+        <span>Healthcare AI</span>
+        <span>XAI</span>
+        <span>BPM</span>
+      </div>
+    </div>
+    <div class="marquee-track mode-developer">
+      <div class="marquee-content">
+        <span>Python</span>
+        <span>Docker</span>
+        <span>Flask</span>
+        <span>FastAPI</span>
+        <span>PyTorch</span>
+        <span>PostgreSQL</span>
+        <span>GitHub Actions</span>
+        <span>LangChain</span>
+        <span>Open Source</span>
+        <span>REST APIs</span>
+        <span>MLOps</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span>Python</span>
+        <span>Docker</span>
+        <span>Flask</span>
+        <span>FastAPI</span>
+        <span>PyTorch</span>
+        <span>PostgreSQL</span>
+        <span>GitHub Actions</span>
+        <span>LangChain</span>
+        <span>Open Source</span>
+        <span>REST APIs</span>
+        <span>MLOps</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <h2>About <mark>me</mark></h2>
+        <p>Research Fellow at the University of Padua, Department of Mathematics "Tullio Levi-Civita".</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="info-card reveal" style="--delay: 0.1s">
+          <div class="info-row">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <div>
+              <div class="info-label">Name</div>
+              <div class="info-value">Francesco Vinci</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            <div>
+              <div class="info-label">Role</div>
+              <div class="info-value">Research Fellow (Assegnista di Ricerca)</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <div class="info-label">Office</div>
+              <div class="info-value">Room 2CD8, Via Trieste 63 &mdash; 35121 Padova</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <div>
+              <div class="info-label">Email</div>
+              <div class="info-value"><a href="mailto:francesco.vinci@unipd.it">francesco.vinci@unipd.it</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text reveal" style="--delay: 0.2s">
+          <p>
+            I'm Francesco, an <b>AI and process science</b> researcher at the University of Padua.
+            My work bridges <b>process mining</b>, <b>machine learning</b>, and <b>explainable AI</b> to enable transparent what-if and prescriptive analytics in real-world settings. I focus on <b>data-driven process simulation</b> models for operational decision-making, with applications in healthcare and industry, and develop <b>open-source tools</b> to translate research into practice.
+          </p>
+        </div>
+      </div>
+
+      <!-- Research Areas — 3D Tilt Cards -->
+      <div class="areas-grid mode-researcher">
+        <div class="area-card reveal" style="--delay: 0s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+          </div>
+          <h4>Process Mining</h4>
+          <p>Extracting insights from event logs to discover, monitor, and improve processes.</p>
+        </div>
+        <div class="area-card reveal" style="--delay: 0.08s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 2 2 3 2 6h4c0-3 2-4 2-6a4 4 0 0 0-4-4z"/><line x1="10" y1="16" x2="14" y2="16"/><line x1="10" y1="19" x2="14" y2="19"/><line x1="11" y1="22" x2="13" y2="22"/></svg>
+          </div>
+          <h4>Machine &amp; Deep Learning</h4>
+          <p>Predictive and generative models applied to process analytics and real-world challenges.</p>
+        </div>
+        <div class="area-card reveal" style="--delay: 0.16s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h4>Interpretability</h4>
+          <p>Transparent, explainable models for trustworthy decision support.</p>
+        </div>
+        <div class="area-card reveal" style="--delay: 0.24s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+          </div>
+          <h4>Mathematics</h4>
+          <p>Formal frameworks, probabilistic models, and mathematical foundations.</p>
+        </div>
+        <div class="area-card reveal" style="--delay: 0.32s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h4>Data Science</h4>
+          <p>End-to-end pipelines from data acquisition to actionable insights.</p>
+        </div>
+        <div class="area-card reveal" style="--delay: 0.4s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <h4>Process Simulation</h4>
+          <p>Data-driven discrete-event simulation for what-if analysis.</p>
+        </div>
+      </div>
+
+      <!-- Developer Skills Cards -->
+      <div class="areas-grid mode-developer">
+        <div class="area-card reveal" style="--delay: 0s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h4>Programming</h4>
+          <p>Python, SQL, R, JavaScript, C, C++</p>
+        </div>
+        <div class="area-card reveal" style="--delay: 0.08s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 2 2 3 2 6h4c0-3 2-4 2-6a4 4 0 0 0-4-4z"/><line x1="10" y1="16" x2="14" y2="16"/><line x1="10" y1="19" x2="14" y2="19"/><line x1="11" y1="22" x2="13" y2="22"/></svg>
+          </div>
+          <h4>ML &amp; AI</h4>
+          <p>PyTorch, TensorFlow, scikit-learn, XGBoost, SHAP, River</p>
+        </div>
+        <div class="area-card reveal" style="--delay: 0.16s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h4>MLOps &amp; Infrastructure</h4>
+          <p>Docker, Git, GitHub Actions, Flask, FastAPI, AWS</p>
+        </div>
+        <div class="area-card reveal" style="--delay: 0.24s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h4>Agentic AI &amp; LLMs</h4>
+          <p>LangChain, prompt engineering, Claude Code, agentic workflows</p>
+        </div>
+        <div class="area-card reveal" style="--delay: 0.32s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h4>Data Engineering</h4>
+          <p>PostgreSQL, MongoDB, REST APIs, XES/OCEL event logs</p>
+        </div>
+        <div class="area-card reveal" style="--delay: 0.4s">
+          <div class="area-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h4>Visualization</h4>
+          <p>Matplotlib, Plotly, pandas, Jupyter</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Timeline ===== -->
+  <div class="timeline-wrap" id="timeline">
+    <div class="container">
+      <div class="timeline reveal">
+        <div class="timeline-line"></div>
+        <div class="timeline-items">
+          <div class="tl-item"><span class="tl-year">1998</span><div class="tl-dot"></div><div class="tl-card"><h4>Born in Messina</h4></div></div>
+          <div class="tl-item"><span class="tl-year">2016</span><div class="tl-dot"></div><div class="tl-card"><h4>Moved to Padua</h4></div></div>
+          <div class="tl-item"><span class="tl-year">2020</span><div class="tl-dot"></div><div class="tl-card"><h4>B.Sc. Mathematics</h4><p>University of Padua</p></div></div>
+          <div class="tl-item"><span class="tl-year">2022</span><div class="tl-dot"></div><div class="tl-card"><h4>M.Sc. Data Science</h4><p>University of Padua</p></div></div>
+          <div class="tl-item"><span class="tl-year">2026</span><div class="tl-dot"></div><div class="tl-card"><h4>Ph.D. Computer Science</h4><p>University of Padua</p></div></div>
+          <div class="tl-item tl-now"><span class="tl-year">Now</span><div class="tl-dot"></div><div class="tl-card"><h4>Research Fellow</h4><p>University of Padua</p></div></div>
         </div>
       </div>
     </div>
   </div>
-  <!--/ Intro Skew End /-->
 
-  <section id="about" class="about-mf sect-pt4 route">
+  <!-- ===== CV ===== -->
+  <section id="cv" class="section">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="box-shadow-full">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="row">
-                  <div class="col-sm-6 col-md-5">
-                    <div class="about-img">
-                      <img src="img/frav.png" class="img-fluid rounded b-shadow-a" alt="">
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-7">
-                    <div class="about-info">
-                      <p><span class="title-s">Name: </span> <span>Francesco Vinci</span></p>
-                      <p><span class="title-s">Profile: </span> <span>Research Fellow</span></p>
-                      <p><span class="title-s">Email: </span> <span>francesco.vinci@unipd.it</span></p>
-                      <p><span class="title-s">Address: </span> <span>Room 2CD8, Department of Mathematics “Tullio Levi-Civita” - Unipd</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill-mf">
-                  <p class="title-s">Skills</p>
-                  <!-- <span>HTML</span> <span class="pull-right">85%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                  <span>CSS3</span> <span class="pull-right">75%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                  <span>PHP</span> <span class="pull-right">50%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                  <span>JAVASCRIPT</span> <span class="pull-right">90%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div> -->
-                  <ul>
-                    <li>Process Mining</li>
-                    <li>Data Science</li>
-                    <li>Machine and Deep Learning</li>
-                    <li>Business Process Simulation</li>
-                    <li>Mathematics</li>
-                    <li>Statistics</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="about-me pt-4 pt-md-0">
-                  <div class="title-box-2">
-                    <h5 class="title-left">
-                      About me
-                    </h5>
-                  </div>
-                  <p class="lead">
-                    I'm Francesco, an <b>AI and process science</b> researcher at the University of Padua.
-                    My work bridges <b>process mining</b>, <b>machine learning</b>, and <b>explainable AI</b> to enable transparent what-if and prescriptive analytics in real-world settings. I focus on <b>data-driven process simulation</b> models for operational decision-making, with applications in healthcare and industry, and develop <b>open-source tools</b> to translate research into practice.
-                  </p>
-                </div>
-              </div>
-            </div>
+      <div class="section-header reveal">
+        <span class="section-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+        <h2>Curriculum <mark>Vitae</mark></h2>
+        <p>Work experience, education, and achievements.</p>
+      </div>
+
+      <!-- ========== RESEARCHER CV ========== -->
+      <div class="cv-tabs mode-researcher reveal">
+        <button class="cv-tab active" data-tab="cv-r-work">Experience</button>
+        <button class="cv-tab" data-tab="cv-r-education">Education</button>
+        <button class="cv-tab" data-tab="cv-r-conferences">Conferences</button>
+      </div>
+
+      <div id="cv-r-work" class="cv-panel mode-researcher active reveal">
+        <div class="cv-entry"><div class="cv-date">10/2025 — Present</div><div class="cv-content"><h4>Research Fellow — University of Padua</h4><p>Research on the discovery and enhancement of process simulation models using explainable machine learning techniques, generative and agentic AI, with applications to the optimization of healthcare processes, particularly in emergency medicine.</p></div></div>
+        <div class="cv-entry"><div class="cv-date">10/2022 — 09/2025</div><div class="cv-content"><h4>Ph.D. Researcher — University of Padua</h4><p>Research in process mining, process simulation, and data-driven modeling, with a focus on the discovery, repair, and improvement of simulation models using event data. Leveraged data science and AI techniques for online model adaptation and process optimization, with applications to business and healthcare processes.</p></div></div>
+        <div class="cv-entry"><div class="cv-date">03/2025 — 09/2025</div><div class="cv-content"><h4>Visiting Researcher — RWTH Aachen University</h4><p>Visited the Process and Data Science (PADS) group, conducting research on white-box process simulation models. Developed ProSiT, a tool for configurable process simulation. Supervised by Prof. Wil van der Aalst.</p></div></div>
+        <div class="cv-entry"><div class="cv-date">09/2024 — 03/2025</div><div class="cv-content"><h4>Visiting Researcher — Fraunhofer FIT</h4><p>Visited the Fraunhofer Process Mining Group in Aachen, conducting research on white-box simulation models and their adaptation in online settings. Supervised by Prof. Wil van der Aalst and Dr. Gyunam Park.</p></div></div>
+        <div class="cv-entry"><div class="cv-date">04/2023 — Present</div><div class="cv-content"><h4>Teaching Assistant — University of Padua</h4><p>Teaching Assistant for the Database course in the B.Sc. in Computer Science, supporting students during laboratory sessions on PostgreSQL and pgAdmin.</p></div></div>
+        <div class="cv-entry"><div class="cv-date">03/2022 — 08/2022</div><div class="cv-content"><h4>R&amp;D Data Science Intern — Danieli Automation</h4><p>Developed a framework combining supervised and unsupervised machine and deep learning methods for video anomaly detection to identify sticking events in the continuous casting process of steel manufacturing.</p></div></div>
+      </div>
+
+      <div id="cv-r-education" class="cv-panel mode-researcher reveal">
+        <div class="cv-entry"><div class="cv-date">10/2022 — 09/2025</div><div class="cv-content"><h4>Ph.D. in Brain, Mind &amp; Computer Science — University of Padua</h4><p>Curricula: Computer Science for Societal Challenges and Innovation</p><p>Thesis: <em>Towards Reliable and Explainable Process Simulation Models: Discovery, Refinement, and Applications</em></p><p>Supervisor: Prof. Massimiliano de Leoni &mdash; Cosupervisor: Dr. Silvia Gabrielli</p><p>Thesis Reviewers: Prof. Marlon Dumas, Prof. Andrea Marrella</p></div></div>
+        <div class="cv-entry"><div class="cv-date">10/2020 — 09/2022</div><div class="cv-content"><h4>M.Sc. in Data Science — University of Padua</h4><p>Thesis: <em>Semi-supervised Deep Learning methods for Video Anomaly Detection applied to sticking identification during steelmaking continuous casting process</em></p><p>Supervisor: Prof. Michele Rossi</p></div></div>
+        <div class="cv-entry"><div class="cv-date">10/2016 — 02/2020</div><div class="cv-content"><h4>B.Sc. in Mathematics — University of Padua</h4><p>Thesis: <em>Enlargement of filtrations in discrete time and applications to finance</em></p><p>Supervisor: Prof. Claudio Fontana</p></div></div>
+      </div>
+
+      <div id="cv-r-conferences" class="cv-panel mode-researcher reveal">
+        <div class="cv-entry"><div class="cv-date">12/2025</div><div class="cv-content"><h4>23rd International Conference on Service-Oriented Computing (ICSOC 2025) — Shenzhen, China</h4><p>Speaker: <em>Reliable and Configurable Process Simulations via Probabilistic White-Box Models</em> (main conference)</p><p>Speaker: <em>ProSiT: A Tool for Interactive and Transparent Process Simulations</em> (demos &amp; resources)</p></div></div>
+        <div class="cv-entry"><div class="cv-date">09/2025</div><div class="cv-content"><h4>23rd International Conference on Business Process Management (BPM 2025) — Seville, Spain</h4><p>Speaker: <em>Online Discovery of Simulation Models for Evolving Business Processes</em> (main conference)</p></div></div>
+        <div class="cv-entry"><div class="cv-date">10/2024</div><div class="cv-content"><h4>7th International Workshop on Process-Oriented Data Science for Healthcare (PODS4H 2024) — Lyngby, Denmark</h4><p>Speaker: <em>Healthcare Process Optimization via Simulations: An Emergency Department Case Study</em> (poster)</p></div></div>
+        <div class="cv-entry"><div class="cv-date">10/2024</div><div class="cv-content"><h4>6th International Conference on Process Mining (ICPM 2024) — Lyngby, Denmark</h4><p>Attendee</p></div></div>
+        <div class="cv-entry"><div class="cv-date">09/2024</div><div class="cv-content"><h4>22nd International Conference on Business Process Management (BPM 2024) — Krakow, Poland</h4><p>Speaker: <em>Repairing Process Models Through Simulation and Explainable AI</em> (main conference)</p></div></div>
+        <div class="cv-entry"><div class="cv-date">07/2024</div><div class="cv-content"><h4>12th European Big Data Management &amp; Analytics Summer School (eBISS 2024) — Padova, Italy</h4><p>Organizer</p></div></div>
+        <div class="cv-entry"><div class="cv-date">09/2023</div><div class="cv-content"><h4>21st International Conference on Business Process Management (BPM 2023) — Utrecht, The Netherlands</h4><p>Speaker: <em>Investigating the Influence of Data-Aware Process States on Activity Probabilities in Simulation Models</em> (main conference)</p></div></div>
+        <div class="cv-entry"><div class="cv-date">07/2023</div><div class="cv-content"><h4>11th European Big Data Management &amp; Analytics Summer School (eBISS 2023) — Barcelona, Spain</h4><p>Attendee</p></div></div>
+      </div>
+
+      <!-- ========== DEVELOPER CV ========== -->
+      <div class="cv-tabs mode-developer reveal">
+        <button class="cv-tab active" data-tab="cv-d-work">Experience</button>
+        <button class="cv-tab" data-tab="cv-d-education">Education</button>
+        <button class="cv-tab" data-tab="cv-d-hackathons">Hackathons</button>
+        <button class="cv-tab" data-tab="cv-d-events">Events</button>
+      </div>
+
+      <div id="cv-d-work" class="cv-panel mode-developer active reveal">
+        <div class="cv-entry"><div class="cv-date">10/2025 — Present</div><div class="cv-content"><h4>Research Fellow — University of Padua</h4><p>Research on the discovery and enhancement of process simulation models using explainable machine learning techniques, generative and agentic AI, with applications to the optimization of healthcare processes, particularly in emergency medicine.</p></div></div>
+        <div class="cv-entry"><div class="cv-date">10/2022 — 09/2025</div><div class="cv-content"><h4>Ph.D. Researcher — University of Padua</h4><p>Research in process mining, process simulation, and data-driven modeling, with a focus on the discovery, repair, and improvement of simulation models using event data. Leveraged data science and AI techniques for online model adaptation and process optimization, with applications to business and healthcare processes.</p></div></div>
+        <div class="cv-entry"><div class="cv-date">03/2025 — 09/2025</div><div class="cv-content"><h4>Visiting Researcher — RWTH Aachen University</h4><p>Visited the Process and Data Science (PADS) group, conducting research on white-box process simulation models. Developed ProSiT, a tool for configurable process simulation. Supervised by Prof. Wil van der Aalst.</p></div></div>
+        <div class="cv-entry"><div class="cv-date">09/2024 — 03/2025</div><div class="cv-content"><h4>Visiting Researcher — Fraunhofer FIT</h4><p>Visited the Fraunhofer Process Mining Group in Aachen, conducting research on white-box simulation models and their adaptation in online settings. Supervised by Prof. Wil van der Aalst and Dr. Gyunam Park.</p></div></div>
+        <div class="cv-entry"><div class="cv-date">04/2023 — Present</div><div class="cv-content"><h4>Teaching Assistant — University of Padua</h4><p>Teaching Assistant for the Database course in the B.Sc. in Computer Science, supporting students during laboratory sessions on PostgreSQL and pgAdmin.</p></div></div>
+        <div class="cv-entry"><div class="cv-date">03/2022 — 08/2022</div><div class="cv-content"><h4>R&amp;D Data Science Intern — Danieli Automation</h4><p>Developed a framework combining supervised and unsupervised machine and deep learning methods for video anomaly detection to identify sticking events in the continuous casting process of steel manufacturing.</p></div></div>
+      </div>
+
+      <div id="cv-d-education" class="cv-panel mode-developer reveal">
+        <div class="cv-entry"><div class="cv-date">10/2022 — 09/2025</div><div class="cv-content"><h4>Ph.D. in Brain, Mind &amp; Computer Science — University of Padua</h4><p>Curricula: Computer Science for Societal Challenges and Innovation</p><p>Thesis: <em>Towards Reliable and Explainable Process Simulation Models: Discovery, Refinement, and Applications</em></p><p>Supervisor: Prof. Massimiliano de Leoni &mdash; Cosupervisor: Dr. Silvia Gabrielli</p><p>Thesis Reviewers: Prof. Marlon Dumas, Prof. Andrea Marrella</p></div></div>
+        <div class="cv-entry"><div class="cv-date">10/2020 — 09/2022</div><div class="cv-content"><h4>M.Sc. in Data Science — University of Padua</h4><p>Thesis: <em>Semi-supervised Deep Learning methods for Video Anomaly Detection applied to sticking identification during steelmaking continuous casting process</em></p><p>Supervisor: Prof. Michele Rossi</p></div></div>
+        <div class="cv-entry"><div class="cv-date">10/2016 — 02/2020</div><div class="cv-content"><h4>B.Sc. in Mathematics — University of Padua</h4><p>Thesis: <em>Enlargement of filtrations in discrete time and applications to finance</em></p><p>Supervisor: Prof. Claudio Fontana</p></div></div>
+      </div>
+
+      <div id="cv-d-hackathons" class="cv-panel mode-developer reveal">
+        <div class="cv-entry"><div class="cv-date">07/2021</div><div class="cv-content"><h4>World Data League</h4><p>Finalist</p></div></div>
+        <div class="cv-entry"><div class="cv-date">04/2021</div><div class="cv-content"><h4>Youth in Action — Fondazione Italiana Accenture</h4><p>Premio Promotori Winner</p></div></div>
+      </div>
+
+      <div id="cv-d-events" class="cv-panel mode-developer reveal">
+        <div class="cv-entry"><div class="cv-date">03/2022</div><div class="cv-content"><h4>Youth in Action for SDGs 2022 — Milan, Italy</h4><p>Fondazione Italiana Accenture — Sustainability &amp; Innovation</p></div></div>
+        <div class="cv-entry"><div class="cv-date">11/2021</div><div class="cv-content"><h4>Web Summit 2021 — Lisbon, Portugal</h4><p>Tech conference — Startups, AI &amp; Innovation</p></div></div>
+      </div>
+
+      <div class="cv-download reveal">
+        <a href="files/CV.pdf" download class="btn btn-outline cv-download-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Full CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== World Map Panel ===== -->
+  <div class="map-panel">
+      <div class="map-wrap reveal">
+        <svg viewBox="250 40 750 200" class="world-map" xmlns="http://www.w3.org/2000/svg">
+          <g class="map-land">
+            <path d="M797,36 809,37 815,38 813,42 806,43 811,45 815,46 821,45 830,46 842,47 848,46 853,46 857,47 860,52 865,53 872,52 877,51 882,52 889,51 915,49 925,53 936,53 942,53 947,57 956,56 961,57 966,57 971,59 973,55 982,56 988,56 996,57 1000,58 1000,70 996,71 998,75 993,76 985,78 978,81 974,82 969,82 962,84 954,84 950,88 953,94 949,96 945,99 940,103 936,108 933,102 932,96 933,92 936,89 945,85 950,82 955,80 957,76 952,79 945,82 943,78 935,79 928,84 924,86 920,87 916,84 904,85 895,86 886,91 875,98 880,98 884,101 889,99 893,103 891,108 889,115 885,119 880,125 876,128 871,131 867,130 863,133 860,136 855,139 857,143 860,148 859,153 854,154 850,148 847,145 848,141 841,140 836,142 839,138 835,137 831,141 826,142 830,145 836,145 840,146 836,148 832,151 834,155 837,160 839,164 839,169 836,172 832,178 830,182 826,184 822,187 817,188 811,190 807,193 801,190 796,193 794,197 798,204 802,208 804,213 803,218 798,221 792,226 790,221 786,219 782,215 778,213 776,220 777,224 779,229 784,233 787,237 788,242 790,246 785,245 782,242 779,237 778,232 775,228 774,222 773,217 773,212 771,205 765,206 763,202 760,196 757,193 755,188 751,187 747,189 742,190 740,194 736,196 733,199 728,203 724,206 723,212 722,217 720,221 717,225 711,221 709,217 707,211 704,206 703,200 702,193 698,192 692,189 689,184 684,179 679,180 671,180 666,179 659,179 658,175 652,176 646,173 641,170 639,166 635,167 634,171 637,174 639,178 643,180 646,183 652,181 656,178 658,183 663,185 666,188 662,193 661,197 657,198 654,201 649,204 645,206 638,209 634,211 630,213 626,214 621,215 620,211 619,206 617,201 614,196 609,191 607,184 603,181 601,176 598,172 597,168 595,173 590,167 593,173 595,177 599,184 602,188 603,192 604,198 608,203 611,207 614,210 617,213 620,216 621,220 627,220 632,219 636,218 641,217 640,224 639,228 635,235 629,242 622,247 617,253 614,256 611,259 609,263 608,268 609,272 611,278 612,283 613,289 612,293 607,298 601,302 597,305 598,309 599,314 597,318 592,320 591,324 590,329 587,332 583,337 578,341 573,343 569,344 564,344 560,345 556,347 552,346 551,342 549,335 545,329 542,325 541,321 540,316 540,311 537,308 535,303 533,298 534,291 535,286 538,283 537,279 536,275 535,269 533,264 528,258 524,253 526,249 527,244 526,240 521,238 516,238 514,234 510,233 505,233 499,235 495,237 491,236 484,236 479,238 475,237 472,234 468,231 464,228 462,224 459,220 455,218 453,213 451,209 454,205 455,200 455,194 453,190 455,186 457,182 460,177 464,173 468,172 471,169 473,163 476,158 481,155 484,151 490,152 497,151 501,149 509,148 515,148 520,147 526,146 531,147 530,151 528,155 531,158 535,159 542,160 546,163 550,165 556,164 558,159 564,159 569,161 574,162 579,164 584,163 589,164 594,164 597,161 599,156 600,152 599,148 595,149 590,150 585,148 580,148 575,145 573,140 580,138 587,136 593,133 598,133 603,135 607,136 612,136 616,133 612,130 607,127 602,124 606,122 609,119 604,119 600,120 597,123 601,124 594,127 590,124 588,120 584,122 581,125 579,129 578,133 576,137 571,137 566,137 563,140 567,144 563,146 559,145 556,141 554,137 553,133 549,131 544,129 541,126 537,123 534,126 538,129 542,133 547,136 551,138 546,139 545,144 544,140 541,137 536,135 531,132 528,128 523,127 518,130 513,129 509,130 508,134 502,136 499,141 498,145 494,148 488,148 484,150 479,147 475,148 474,143 475,138 475,132 478,128 485,129 490,129 495,129 497,122 494,119 488,117 491,114 496,115 504,111 507,108 511,107 513,103 517,101 522,101 524,97 522,93 526,91 530,93 527,96 530,99 535,99 539,101 545,99 549,98 555,99 559,97 559,92 563,90 567,92 568,88 572,84 578,85 573,82 568,83 564,84 559,81 558,76 562,73 569,70 566,67 559,69 555,73 550,76 548,80 552,83 547,87 546,92 541,94 536,96 533,90 529,85 523,88 516,87 514,78 524,74 529,71 534,67 541,62 546,60 553,56 559,55 564,55 568,53 573,53 578,52 587,54 583,55 589,56 594,57 601,58 612,61 611,66 607,67 594,65 597,71 601,72 610,71 617,65 622,66 623,61 628,60 627,64 633,64 640,61 649,59 654,60 659,60 663,59 667,60 668,56 676,57 680,58 690,61 689,57 685,54 690,50 694,47 702,48 700,52 702,58 703,62 698,66 702,65 706,63 708,58 704,57 707,54 703,52 708,50 712,52 715,49 721,49 726,51 724,45 735,45 741,45 742,41 751,40 758,40 766,38 775,38 780,38 783,35 790,34 795,35 791,36 797,36Z"/>
+            <path d="M248,57 252,58 257,63 262,59 270,57 274,58 274,64 268,66 258,69 254,72 248,73 241,78 238,81 237,86 241,87 244,91 253,92 257,94 261,95 268,97 272,102 278,108 282,104 280,100 283,97 287,93 285,89 285,84 283,77 290,77 295,77 301,79 307,80 308,86 312,88 316,87 319,84 323,85 326,88 329,92 332,95 339,97 342,101 345,105 341,107 337,108 333,110 329,111 323,110 318,110 313,112 306,117 302,120 309,116 315,114 319,113 320,119 325,123 332,119 330,124 324,126 318,129 321,124 314,125 308,128 304,130 305,134 300,135 296,137 292,142 289,147 288,141 288,147 290,151 285,154 280,157 277,160 274,163 275,169 278,175 277,180 273,178 270,174 270,169 266,166 260,166 254,166 251,169 245,168 241,167 237,168 232,171 229,176 229,181 228,186 229,191 232,195 237,198 242,199 246,198 249,195 251,191 257,190 257,195 256,199 255,203 259,206 264,206 268,208 268,214 267,218 269,222 272,225 278,224 283,224 287,226 290,223 292,219 298,217 302,216 301,220 302,220 305,217 309,218 313,221 318,222 325,220 329,223 333,226 338,230 341,233 345,234 350,234 356,237 360,245 359,249 365,251 371,253 375,254 379,257 385,258 393,260 397,263 401,264 403,269 402,275 397,281 393,286 392,294 391,298 390,304 387,308 384,312 380,314 376,315 371,317 365,322 365,328 362,331 359,336 355,340 352,344 347,347 341,346 342,351 340,356 335,358 330,358 327,362 323,364 320,367 324,368 319,371 318,375 313,377 315,381 313,385 312,389 308,391 311,395 306,396 303,400 298,399 292,395 290,390 290,385 294,380 293,373 298,368 294,370 295,361 296,356 298,349 300,344 302,340 301,336 301,330 304,321 304,316 305,309 305,301 301,298 296,295 291,292 288,288 286,284 283,279 280,273 276,268 274,263 277,259 276,255 277,251 279,247 282,243 286,239 285,234 284,230 282,226 277,227 272,227 267,226 265,222 261,220 259,216 256,213 251,212 247,211 241,207 237,205 233,206 228,205 223,204 218,201 212,199 208,196 207,192 206,188 203,184 199,180 196,177 193,173 188,170 186,164 181,162 182,167 185,170 188,174 191,179 193,183 196,186 192,183 188,181 187,177 182,175 183,171 179,168 177,164 175,160 172,157 168,155 165,152 160,146 156,142 154,138 155,133 156,124 155,120 154,116 158,117 153,111 146,109 145,105 141,103 137,99 133,96 129,91 125,88 120,88 111,85 104,83 95,82 91,81 87,84 82,85 78,84 82,80 78,81 72,85 69,90 65,92 61,93 57,96 52,96 47,98 42,99 48,96 54,94 59,92 62,88 56,86 52,87 49,83 45,84 41,82 40,78 43,75 49,73 53,72 49,71 42,71 38,70 33,68 37,66 43,65 51,66 45,64 41,61 37,60 43,59 47,57 53,54 58,53 65,52 71,54 77,53 81,54 90,55 95,55 101,55 105,56 114,57 118,58 123,57 131,57 135,56 139,55 143,56 151,57 158,57 163,56 167,57 173,58 177,59 184,60 180,61 185,62 192,62 198,63 200,59 205,59 210,61 218,62 227,62 233,60 237,61 235,56 232,52 236,50 242,52 246,55Z"/>
+            <path d="M425,18 442,20 437,21 411,22 423,22 436,22 443,24 456,22 465,23 455,26 444,27 451,27 445,31 449,36 444,36 440,37 445,39 446,44 440,44 435,46 438,49 433,48 439,51 435,54 429,52 434,55 430,58 423,60 415,61 409,62 405,65 399,67 393,68 387,70 386,74 381,76 380,83 371,81 366,81 361,77 357,73 355,69 351,66 353,60 357,59 352,58 348,57 349,53 357,54 352,52 347,52 348,48 344,45 341,42 337,41 330,39 324,38 316,39 310,39 306,38 302,36 309,35 315,35 303,34 296,33 307,31 317,29 311,27 323,24 333,22 341,22 350,22 360,21 367,22 376,23 370,22 379,19 389,19 393,18 403,18 425,18Z"/>
+            <path d="M899,288 902,291 906,299 907,303 912,305 918,313 921,317 925,320 925,326 926,331 925,336 923,340 920,344 917,353 912,355 908,357 902,357 897,357 893,356 889,354 888,350 884,349 880,348 883,343 879,345 874,342 869,339 865,337 860,338 856,339 850,339 845,342 841,344 835,344 831,346 826,347 821,346 821,341 820,335 818,330 817,326 815,321 815,316 816,312 821,310 825,307 830,306 836,305 840,301 842,296 845,293 849,290 853,288 857,291 861,288 865,284 868,281 873,283 879,287 876,291 881,294 884,297 889,299 892,296 894,292 894,284 896,280 898,284 899,288Z"/>
+            <path d="M260,47 264,46 271,45 276,48 281,49 290,49 294,51 299,51 309,54 314,58 309,59 315,61 320,62 324,64 322,69 315,66 311,68 317,70 320,74 316,75 309,73 313,75 316,78 309,77 303,75 299,74 292,70 284,72 289,69 295,68 298,63 292,60 286,59 283,56 274,56 264,56 258,55 254,54 250,52 252,47 262,45Z"/>
+            <path d="M873,253 879,256 884,255 889,257 896,259 905,264 910,267 909,271 913,275 917,277 911,278 907,275 902,271 898,273 892,275 886,272 882,273 885,270 883,265 878,263 871,260 867,258 872,257 867,256 863,253 868,251 872,252Z"/>
+            <path d="M310,19 317,19 323,20 328,20 321,22 315,23 307,26 302,28 286,30 291,32 284,34 278,36 276,38 269,38 261,38 251,38 256,36 264,35 260,33 263,31 259,27 266,27 273,26 266,26 257,26 252,25 246,23 250,22 258,21 262,20 271,20 275,19 280,19 288,19 298,19 310,19Z"/>
+            <path d="M892,147 890,152 886,154 881,154 877,157 870,155 864,156 865,163 862,160 864,155 868,152 874,151 880,146 886,145 889,140 890,136 894,139 892,144Z"/>
+            <path d="M794,266 789,264 785,262 782,258 778,252 775,247 771,243 768,239 765,236 771,235 775,240 780,244 785,246 788,250 790,255 795,259 794,266Z"/>
+            <path d="M660,54 649,53 643,51 646,48 651,45 655,43 661,40 670,38 679,38 684,37 689,36 680,40 671,41 662,44 658,46 654,49 660,54Z"/>
+            <path d="M827,245 831,247 827,248 826,252 824,257 823,261 818,260 811,260 806,258 804,254 803,249 805,244 809,245 814,241 817,237 821,235 824,231 829,234 827,239 828,244Z"/>
+            <path d="M639,288 640,292 639,296 637,300 635,307 633,312 632,316 629,320 622,319 621,315 620,311 623,306 622,301 623,297 626,294 630,292 633,289 636,286Z"/>
+            <path d="M183,47 188,47 192,49 197,48 201,50 209,51 214,54 219,55 215,57 210,59 206,58 197,59 189,59 185,60 180,58 174,56 180,55 188,55 182,54 176,54 171,53 177,52 168,51 173,48 180,46Z"/>
+            <path d="M492,87 489,90 495,90 491,95 497,98 501,102 505,104 504,108 498,109 493,110 487,110 491,107 486,107 487,103 491,102 490,98 486,97 483,92 486,87 492,87Z"/>
+            <path d="M14,65 23,64 28,67 21,68 20,72 15,70 11,68 5,68 0,67 0,58 7,61 14,63Z"/>
+            <path d="M279,187 283,188 287,191 292,193 288,195 283,192 277,189 273,188 268,188 264,189 269,186 274,186 279,187Z"/>
+            <path d="M460,65 462,69 451,73 445,73 437,72 433,70 438,69 432,68 439,66 443,67 447,66 451,67 455,65 460,65Z"/>
+          </g>
+        </svg>
+        <!-- Pin markers (positioned via %) -->
+        <div class="map-pin" style="left:75.6%;top:73.8%"><span class="map-pin-dot"></span><div class="map-pin-card"><strong>ICSOC 2025</strong><span>Shenzhen, China</span></div></div>
+        <div class="map-pin" style="left:31.1%;top:53.0%"><span class="map-pin-dot"></span><div class="map-pin-card"><strong>BPM 2025</strong><span>Seville, Spain</span></div></div>
+        <div class="map-pin" style="left:38.0%;top:27.5%"><span class="map-pin-dot"></span><div class="map-pin-card"><strong>PODS4H &amp; ICPM 2024</strong><span>Lyngby, Denmark</span></div></div>
+        <div class="map-pin" style="left:40.7%;top:35.5%"><span class="map-pin-dot"></span><div class="map-pin-card"><strong>BPM 2024</strong><span>Krakow, Poland</span></div></div>
+        <div class="map-pin" style="left:35.2%;top:32.8%"><span class="map-pin-dot"></span><div class="map-pin-card"><strong>BPM 2023</strong><span>Utrecht, Netherlands</span></div></div>
+        <div class="map-pin" style="left:34.1%;top:47.5%"><span class="map-pin-dot"></span><div class="map-pin-card"><strong>eBISS 2023</strong><span>Barcelona, Spain</span></div></div>
+        <div class="map-pin" style="left:30.0%;top:51.3%"><span class="map-pin-dot"></span><div class="map-pin-card"><strong>Web Summit 2021</strong><span>Lisbon, Portugal</span></div></div>
+        <div class="map-pin" style="left:35.6%;top:34.5%"><span class="map-pin-dot"></span><div class="map-pin-card"><strong>Visiting Researcher</strong><span>Aachen, Germany</span></div></div>
+        <div class="map-pin home" style="left:37.7%;top:42.1%"><span class="map-pin-dot"></span><div class="map-pin-card"><strong>Home Base</strong><span>Padova, Italy</span></div></div>
+        <div class="map-pin" style="left:39.1%;top:52.0%"><span class="map-pin-dot"></span><div class="map-pin-card"><strong>Born Here</strong><span>Messina, Italy</span></div></div>
+      </div>
+  </div>
+
+  <!-- ===== Publications (researcher only) ===== -->
+  <section id="publications" class="section mode-researcher">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+        <h2><mark>Publications</mark></h2>
+        <p>Peer-reviewed papers in process mining, AI, and simulation.</p>
+      </div>
+
+      <!-- 2026 -->
+      <div class="pub-year-group reveal open">
+        <button class="pub-year-label"><span>2026</span><svg class="pub-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="pub-list">
+          <div class="pub-card">
+            <div class="pub-number">J2</div>
+            <a href="https://doi.org/10.1016/j.artmed.2026.103391" target="_blank" rel="noopener">
+              <div class="pub-title">Improving Organizational Processes in Healthcare through Simulation-Driven Resource Allocation: Methodology and Real-World Case Study</div>
+              <div class="pub-authors"><span class="me">Francesco Vinci</span>, Davide Aloini, Elisabetta Benevento, Alessandro Stefanini, Francesca Zen, Massimiliano de Leoni</div>
+              <div class="pub-venue">Artificial Intelligence in Medicine, Vol. 176. Elsevier. 2026.</div>
+            </a>
           </div>
         </div>
       </div>
-    </div>
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(img/overlay-bg.png)">
-      <div class="overlay-mf"></div>
-      <div class="tl-container">
-        <div class="tl-items">
-          <div class="tl-track"></div>
 
-          <!-- 1998 — normal: year above · text below -->
-          <div class="tl-item">
-            <div class="tl-slot-a"><span class="tl-year">1998</span></div>
-            <div class="tl-dot"></div>
-            <div class="tl-slot-b"><span class="tl-text">Born in Messina</span></div>
-          </div>
+      <!-- 2025 -->
+      <div class="pub-year-group reveal open">
+        <button class="pub-year-label"><span>2025</span><svg class="pub-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="pub-list">
+          <div class="pub-card"><div class="pub-number">C7</div><a href="https://doi.org/10.1007/978-3-032-02867-9_27" target="_blank" rel="noopener"><div class="pub-title">Online Discovery of Simulation Models for Evolving Business Processes</div><div class="pub-authors"><span class="me">Francesco Vinci</span>, Gyunam Park, Wil van der Aalst, Massimiliano de Leoni</div><div class="pub-venue">International Conference on Business Process Management. Seville, Spain. pp. 451-468. Springer Nature Switzerland. 2025.</div></a></div>
+          <div class="pub-card"><div class="pub-number">C6</div><a href="http://doi.org/10.1007/978-3-032-02936-2_15" target="_blank" rel="noopener"><div class="pub-title">Leveraging Counterfactuals for Prescriptive Process Analytics</div><div class="pub-authors">Ngoc-Diem Le, Alessandro Padella, <span class="me">Francesco Vinci</span>, Massimiliano de Leoni</div><div class="pub-venue">Business Process Management: Responsible BPM Forum, Process Technology Forum. Seville, Spain. Springer Nature Switzerland. 2025.</div></a></div>
+          <div class="pub-card"><div class="pub-number">C5</div><a href="https://icsoc2025.hit.edu.cn/" target="_blank" rel="noopener"><div class="pub-title">Reliable and Configurable Process Simulations via Probabilistic White-Box Models</div><div class="pub-authors"><span class="me">Francesco Vinci</span>, Gyunam Park, Wil van der Aalst, Massimiliano de Leoni</div><div class="pub-venue">International Conference on Service-Oriented Computing. Shenzhen, China. pp. 337-352. Springer Nature Singapore. 2025.</div></a></div>
+          <div class="pub-card"><div class="pub-number">C4</div><a href="https://icsoc2025.hit.edu.cn/" target="_blank" rel="noopener"><div class="pub-title">ProSiT: A Tool for Interactive and Transparent Process Simulations</div><div class="pub-authors"><span class="me">Francesco Vinci</span>, Gyunam Park, Wil van der Aalst, Massimiliano de Leoni</div><div class="pub-venue">International Conference on Service-Oriented Computing, Demonstrations and Resources. Shenzhen, China. Accepted. 2025.</div></a></div>
+          <div class="pub-card"><div class="pub-number">J1</div><a href="https://doi.org/10.1007/s44311-025-00007-7" target="_blank" rel="noopener"><div class="pub-title">Balancing Fitness and Precision in Process Model Repair: Framework Formalization, Assessment, and Benefits for Simulation</div><div class="pub-authors"><span class="me">Francesco Vinci</span>, Massimiliano de Leoni</div><div class="pub-venue">Process Science, Vol. 2, n. 3. Springer Nature. 2025.</div></a></div>
+        </div>
+      </div>
 
-          <!-- 2016 — alt: text above · year below -->
-          <div class="tl-item tl-alt">
-            <div class="tl-slot-a"><span class="tl-text">Moved to Padua</span></div>
-            <div class="tl-dot"></div>
-            <div class="tl-slot-b"><span class="tl-year">2016</span></div>
-          </div>
+      <!-- 2024 -->
+      <div class="pub-year-group reveal open">
+        <button class="pub-year-label"><span>2024</span><svg class="pub-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="pub-list">
+          <div class="pub-card"><div class="pub-number">C3</div><a href="https://doi.org/10.1007/978-3-031-70396-6_20" target="_blank" rel="noopener"><div class="pub-title">Experience-Based Resource Allocation for Remaining Time Optimization</div><div class="pub-authors">Alessandro Padella, Felix Mannhardt, <span class="me">Francesco Vinci</span>, Massimiliano de Leoni, Irene Vanderfeesten</div><div class="pub-venue">International Conference on Business Process Management. Krakow, Poland. pp. 345-362. Springer Nature Switzerland. 2024.</div></a></div>
+          <div class="pub-card"><div class="pub-number">C2</div><a href="https://doi.org/10.1007/978-3-031-70396-6_8" target="_blank" rel="noopener"><div class="pub-title">Repairing Process Models through Simulation and Explainable AI</div><div class="pub-authors"><span class="me">Francesco Vinci</span>, Massimiliano de Leoni</div><div class="pub-venue">International Conference on Business Process Management. Krakow, Poland. pp. 129-145. Springer Nature Switzerland. 2024.</div></a></div>
+        </div>
+      </div>
 
-          <!-- 2020 — normal: year above · text below -->
-          <div class="tl-item">
-            <div class="tl-slot-a"><span class="tl-year">2020</span></div>
-            <div class="tl-dot"></div>
-            <div class="tl-slot-b"><span class="tl-text">B.Sc. Mathematics<small>University of Padua</small></span></div>
-          </div>
-
-          <!-- 2022 — alt: text above · year below -->
-          <div class="tl-item tl-alt">
-            <div class="tl-slot-a"><span class="tl-text">M.Sc. Data Science<small>University of Padua</small></span></div>
-            <div class="tl-dot"></div>
-            <div class="tl-slot-b"><span class="tl-year">2022</span></div>
-          </div>
-
-          <!-- 2025 — normal: year above · text below -->
-          <div class="tl-item">
-            <div class="tl-slot-a"><span class="tl-year">2025</span></div>
-            <div class="tl-dot"></div>
-            <div class="tl-slot-b"><span class="tl-text">Ph.D. BMCS<small>University of Padua</small></span></div>
-          </div>
-
-          <!-- Now — alt + pulse: text above · year below -->
-          <div class="tl-item tl-alt tl-now">
-            <div class="tl-slot-a"><span class="tl-text">Researcher<small>University of Padua</small></span></div>
-            <div class="tl-dot"></div>
-            <div class="tl-slot-b"><span class="tl-year">Now</span></div>
-          </div>
-
+      <!-- 2023 -->
+      <div class="pub-year-group reveal open">
+        <button class="pub-year-label"><span>2023</span><svg class="pub-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="pub-list">
+          <div class="pub-card"><div class="pub-number">C1</div><a href="https://doi.org/10.1007/978-3-031-41620-0_8" target="_blank" rel="noopener"><div class="pub-title">Investigating the influence of data-aware process states on activity probabilities in simulation models: does accuracy improve?</div><div class="pub-authors">Massimiliano de Leoni, <span class="me">Francesco Vinci</span>, Sander J.J. Leemans, Felix Mannhardt</div><div class="pub-venue">International Conference on Business Process Management. Utrecht, The Netherlands. pp. 129-145. Springer Nature Switzerland. 2023.</div></a></div>
         </div>
       </div>
     </div>
   </section>
 
-
-
-  <section id="cv" class="services-mf route">
+  <!-- ===== Software Tools (developer only) ===== -->
+  <section id="software-tools" class="section mode-developer">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              <br>
-              Work Experience
-            </h3>
-            <div class="line-mf"></div>
+      <div class="section-header reveal">
+        <span class="section-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+        <h2>Software <mark>Tools</mark></h2>
+        <p>Open-source tools to translate research into practice.</p>
+      </div>
+
+      <!-- Featured project -->
+      <div class="software-card software-featured reveal">
+        <span class="software-badge">Featured</span>
+        <div class="software-header">
+          <h3>ProSiT — Process Simulation Tool</h3>
+          <div class="software-links">
+            <a href="https://github.com/franvinci/prosit-tool" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.youtube.com/watch?v=ZN7ajI9-2NI&t=2s" target="_blank" rel="noopener" aria-label="Demo">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Demo
+            </a>
           </div>
         </div>
-        <div class="col-sm-12">
-          <div class="box-shadow-full">
-
-            <div class="experience-item">
-              <h5 class="title-left"><span class="exp-date">(10/2025 - Current)</span> Research Fellow - University of Padua</h5>
-            <p class="lead">
-              Postdoctoral Research Fellow (“Assegnista di Ricerca”).
-            </p>
-            </div>
-            <div class="experience-item">
-              <h5 class="title-left"><span class="exp-date">(04/2023 - Current)</span> Teaching Assistant - University of Padua</h5>
-            <p class="lead">
-              Database Teaching Assistant in Computer Science Bachelor’s degree.
-            </p>
-            </div>
-            <div class="experience-item">
-              <h5 class="title-left"><span class="exp-date">(10/2022 - 09/2025)</span> Ph.D. Researcher - University of Padua</h5>
-              <p class="lead">Conducted research on process mining and process simulations.</p>
-            </div>
-            <div class="experience-item">
-              <h5 class="title-left"><span class="exp-date">(03/2025 - 09/2025)</span> Visiting Researcher - RWTH Aachen University</h5>
-              <p class="lead">Visiting Researcher at the Process and Data Science (PADS) Research Group in Aachen (Germany).</p>
-            </div>
-            <div class="experience-item">
-              <h5 class="title-left"><span class="exp-date">(09/2024 - 03/2025)</span> Visiting Researcher - Fraunhofer FIT</h5>
-              <p class="lead">Visiting Researcher at Fraunhofer FIT, in Aachen (Germany).</p>
-            </div>
-            <div class="experience-item">
-              <h5 class="title-left"><span class="exp-date">(03/2022 - 08/2022)</span> R&D Data Science Intern – Danieli Automation</h5>
-              <p class="lead">Developed a framework combining supervised and unsupervised ML for video anomaly detection in steel continuous casting.</p>
-            </div>
-            <div class="experience-item">
-              <h5 class="title-left"><span class="exp-date">(09/2019 – 12/2019)</span> Library Assistant – University of Padua</h5>
-              <p class="lead">Library assistant and ILL (Interlibrary Loan) office assistant at the Library of Statistical Sciences "Bernardo Colombo" of the University of Padova.</p>
-            </div>
-          </div>
+        <p class="software-desc">
+          Full-stack web application for <b>data-driven business process simulation</b>. Discovers simulation parameters from <b>event logs</b> using <b>explainable machine learning</b>, and enables interactive <b>what-if scenario analysis</b> with visual dashboards.
+        </p>
+        <div class="software-tags">
+          <span class="badge">Python</span>
+          <span class="badge">Flask</span>
+          <span class="badge">Docker</span>
+          <span class="badge badge-carmine">Process Mining</span>
+          <span class="badge badge-carmine">Simulation</span>
+          <span class="badge badge-carmine">Explainable AI</span>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              <br>
-              EDUCATION AND TRAINING
-            </h3>
-            <div class="line-mf"></div>
+      <!-- Software grid -->
+      <div class="software-grid">
+        <div class="software-card reveal" style="--delay: 0.05s">
+          <span class="software-badge">Open Source</span>
+          <div class="software-header">
+            <h3>PetriNetBPS</h3>
+            <div class="software-links">
+              <a href="https://github.com/franvinci/PetriNetBPS" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <p class="software-desc">Python framework for <b>business process simulation</b> based on Petri Nets. Automatically learns simulation parameters from event logs, including <b>transition probabilities</b>, resource allocation, and working calendars.</p>
+          <div class="software-tags">
+            <span class="badge">Python</span>
+            <span class="badge">pm4py</span>
+            <span class="badge badge-carmine">Process Mining</span>
+            <span class="badge badge-carmine">Simulation</span>
           </div>
         </div>
-        <div class="col-sm-12">
-          <div class="box-shadow-full">
-            <div class="title-box-2">
-              <h5 class="title-left">
-                <font color=#B8141B>(10/2022 - 09/2025)</font> Ph.D. in Brain, Mind and Computer Science – University of Padua
-              </h5>
-            </div>
-            <p class="lead">
-              Curriculum: Computer Science for Societal Challenges and Innovation
-              <br>
-              Research project: Data-driven Optimization of Processes in Public Administrations: When Human Perception meets Objectivity
-              <br>
-              Supervisor: prof. Massimiliano de Leoni
-              <br>
-              <a href="http://hit.psy.unipd.it/francesco-vinci" target="_blank" rel="noopener">More details</a>.
-            </p>
 
-            <div class="title-box-2">
-              <h5 class="title-left">
-                <br>
-                <font color=#B8141B>(10/2020 - 09/2022)</font> Master's Degree in Data Science (LM-91) – University of Padua
-              </h5>
+        <div class="software-card reveal" style="--delay: 0.1s">
+          <span class="software-badge">Open Source</span>
+          <div class="software-header">
+            <h3>MLProcessModelRepair</h3>
+            <div class="software-links">
+              <a href="https://github.com/franvinci/MLProcessModelRepair" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                GitHub
+              </a>
             </div>
-            <p class="lead">
-              Thesis: "Semi-supervised Deep Learning methods for Video Anomaly Detection  applied to sticking identification during steelmaking continuous casting process"
-              <br>
-              Supervisor: Prof. Michele Rossi
-              <br>
-              Cosupervisor: Andrea Zamolo
-            </p>
-
-            <div class="title-box-2">
-              <h5 class="title-left">
-                <br>
-                <font color=#B8141B>(10/2016 - 02/2020)</font> Bachelor's Degree in Mathematics – University of Padua
-              </h5>
-            </div>
-            <p class="lead">
-              Thesis: "Enlargement of filtrations in discrete time and applications to finance"
-              <br>
-              Supervisor: Prof. Claudio Fontana
-            </p>
+          </div>
+          <p class="software-desc">Repair framework for <b>Petri Net process models</b> combining simulation and <b>Explainable AI</b>. Identifies structural differences between real and simulated traces to pinpoint and correct model inaccuracies.</p>
+          <div class="software-tags">
+            <span class="badge">Python</span>
+            <span class="badge">pm4py</span>
+            <span class="badge">SHAP</span>
+            <span class="badge badge-carmine">Process Mining</span>
+            <span class="badge badge-carmine">Explainable AI</span>
           </div>
         </div>
-      </div>
 
-      <div class="row" id="publications">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              <br>
-              PUBLICATIONS
-            </h3>
-            <div class="line-mf"></div>
+        <div class="software-card reveal" style="--delay: 0.15s">
+          <span class="software-badge">Open Source</span>
+          <div class="software-header">
+            <h3>StartTimestampEstimator</h3>
+            <div class="software-links">
+              <a href="https://github.com/franvinci/StartTimestampEstimator" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <p class="software-desc">Python framework for estimating <b>activity start timestamps</b> in event logs where only completion times are recorded. Includes evaluation benchmarks.</p>
+          <div class="software-tags">
+            <span class="badge">Python</span>
+            <span class="badge">pm4py</span>
+            <span class="badge badge-carmine">Process Mining</span>
           </div>
         </div>
-        <div class="col-sm-12">
-          <div class="box-shadow-full">
-            <div class="title-box-2">
-              <h5 class="title-left">
-                <br>
-                <font color=#B8141B>2026</font>
-              </h5>
+
+        <div class="software-card reveal" style="--delay: 0.2s">
+          <span class="software-badge">Open Source</span>
+          <div class="software-header">
+            <h3>SPN Simulator</h3>
+            <div class="software-links">
+              <a href="https://github.com/franvinci/SPN_Simulator" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                GitHub
+              </a>
             </div>
-            <p class="lead">
-              <ul>
-                <li><a href="https://doi.org/10.1016/j.artmed.2026.103391"><b>Francesco Vinci</b>, Davide Aloini, Elisabetta Benevento, Alessandro Stefanini, Francesca Zen, Massimiliano de Leoni. <i>Improving Organizational Processes in Healthcare through Simulation-Driven Resource Allocation: Methodology and Real-World Case Study</i>. Artificial Intelligence in Medicine, Vol. 176, pp. 103391. Elsevier. 2026.</a></li>
-              </ul>
-            </p>
-            <div class="title-box-2">
-              <h5 class="title-left">
-                <br>
-                <font color=#B8141B>2025</font>
-              </h5>
-            </div>
-            <p class="lead">
-              <ul>
-                <li><a href="https://icsoc2025.hit.edu.cn/"><b>Francesco Vinci</b>, Gyunam Park, Wil van der Aalst, Massimiliano de Leoni. <i>ProSiT: A Tool for Interactive and Transparent Process Simulations</i>. 23rd International Conference on Service-Oriented Computing (ICSOC 2025). Demonstrations and Resources 2025.</a></li>
-              </ul>
-              <ul>
-                <li><a href="https://icsoc2025.hit.edu.cn/"><b>Francesco Vinci</b>, Gyunam Park, Wil van der Aalst, Massimiliano de Leoni. <i>Reliable and Configurable Process Simulations via Probabilistic White-Box Models</i>. 23rd International Conference on Service-Oriented Computing (ICSOC 2025). 2025.</a></li>
-              </ul>
-              <ul>
-                <li><a href="http://doi.org/10.1007/978-3-032-02936-2_15">Ngoc-Diem Le, Alessandro Padella, <b>Francesco Vinci</b>, Massimiliano de Leoni. <i>Leveraging Counterfactuals for Prescriptive Process Analytics</i>. 23rd International Conference on Business Process Management (BPM 2025), Process Technology Forum. 2025.</a></li>
-              </ul>
-              <ul>
-                <li><a href="https://doi.org/10.1007/978-3-032-02867-9_27"><b>Francesco Vinci</b>, Gyunam Park, Wil van der Aalst, Massimiliano de Leoni. <i>Online Discovery of Simulation Models for Evolving Business Processes</i>. 23rd International Conference on Business Process Management (BPM 2025). 2025.</a></li>
-              </ul>
-              <ul>
-                <li><a href="https://doi.org/10.1007/s44311-025-00007-7"><b>Francesco Vinci</b>, Massimiliano de Leoni. <i>Balancing Fitness and Precision in Process Model Repair: Framework Formalization, Assessment, and Benefits for Simulation</i>. Process Science, Vol. 2, n. 3, Best Process Science Conference Papers 2024 Collection. Springer Nature. 2025.</a></li>
-              </ul>
-            </p>
-            <div class="title-box-2">
-              <h5 class="title-left">
-                <br>
-                <font color=#B8141B>2024</font>
-              </h5>
-            </div>
-            <p class="lead">
-              <ul>
-                <li><a href="https://doi.org/10.1007/978-3-031-70396-6_8"><b>Francesco Vinci</b>, Massimiliano de Leoni. <i>Repairing Process Models through Simulation and Explainable AI</i>. 22nd International Conference on Business Process Management (BPM 2024). 2024.</a></li>
-              </ul>
-              <ul>
-                <li><a href="https://doi.org/10.1007/978-3-031-70396-6_20">Alessandro Padella, Felix Mannhardt, <b>Francesco Vinci</b>, Massimiliano de Leoni, Irene Vanderfeesten. <i>Experience-Based Resource Allocation for Remaining Time Optimization</i>. 22nd International Conference on Business Process Management (BPM 2024). 2024.</a></li>
-              </ul>
-            </p>
-            <div class="title-box-2">
-              <h5 class="title-left">
-                <br>
-                <font color=#B8141B>2023</font>
-              </h5>
-            </div>
-            <p class="lead">
-              <ul class="custom-list">
-                <li><a href="https://doi.org/10.1007/978-3-031-41620-0_8">Massimiliano de Leoni, <b>Francesco Vinci</b>, Sander J.J. Leemans, Felix Mannhardt. <i>Investigating the influence of data-aware process states on activity probabilities in simulation models: does accuracy improve?</i>. 21st International Conference on Business Process Management (BPM 2023). 2023.</a></li>
-              </ul>
-            </p>
+          </div>
+          <p class="software-desc"><b>Stochastic Petri Net</b> simulator. Reads PNML models and event logs, learns stochastic firing patterns using <b>machine learning</b>, and generates <b>synthetic execution traces</b> conforming to observed process behavior.</p>
+          <div class="software-tags">
+            <span class="badge">Python</span>
+            <span class="badge">pm4py</span>
+            <span class="badge badge-carmine">Simulation</span>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              <br>
-              HACKATHONS
-            </h3>
-            <div class="line-mf"></div>
-          </div>
-        </div>
-        <div class="col-sm-12">
-          <div class="box-shadow-full">
-            <div class="title-box-2">
-              <h5 class="title-left">
-                <font color=#B8141B>(04/2021 - 07/2021)</font> World Data League 2021
-              </h5>
-            </div>
-            <p class="lead">
-              Finalist.
-            </p>
-
-            <div class="title-box-2">
-              <h5 class="title-left">
-                <br>
-                <font color=#B8141B>(07/2021)</font> Youth in Action 2021
-              </h5>
-            </div>
-            <p class="lead">
-              "Premio Promotori" winner.
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="box-shadow-full">
-        <div class="title-box text-center">
-          <h3 class="subtitle-a">
-            <br>
-            Download <a href="files/CV.pdf" download>my complete CV</a>.
-          </h3>
-        </div>
-      </div>
-
-      </div>
-    </div>
-
-
-
-
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(img/overlay-bg.png)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-shuffle"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Process Mining</h2>
-                <p class="s-description text-center"></p>
-              </div>
+        <div class="software-card reveal" style="--delay: 0.25s">
+          <span class="software-badge">Open Source</span>
+          <div class="software-header">
+            <h3>franvinci.github.io</h3>
+            <div class="software-links">
+              <a href="https://github.com/franvinci/franvinci.github.io" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                GitHub
+              </a>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-cube"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Machine and Deep Learning</h2>
-                <p class="s-description text-center"></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-help"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Interpretability</h2>
-                <p class="s-description text-center"></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-calculator"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Mathematics</h2>
-                <p class="s-description text-center"></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-stats-bars"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Data Science</h2>
-                <p class="s-description text-center"></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-play"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Process Simulation</h2>
-                <p class="s-description text-center"></p>
-              </div>
-            </div>
+          <p class="software-desc">This personal website. Built with vanilla HTML, CSS, and JavaScript.</p>
+          <div class="software-tags">
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">JavaScript</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!--/ Section Software Tools Star /-->
-  <section id="software-tools" class="services-mf route">
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="section section-gray">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              <br>
-              SOFTWARE TOOLS
-            </h3>
-            <div class="line-mf"></div>
+      <div class="section-header reveal">
+        <span class="section-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+        <h2>Get in <mark>touch</mark></h2>
+        <p>Interested in my research, projects, or a collaboration?</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="reveal" style="--delay: 0.1s">
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Room 2CD8, Via Trieste, 63 — 35121 Padova</span>
+          </div>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <div>
+              <a href="mailto:francesco.vinci@unipd.it">francesco.vinci@unipd.it</a><br>
+              <a href="mailto:fvinci@math.unipd.it">fvinci@math.unipd.it</a>
+            </div>
           </div>
         </div>
-        <div class="col-sm-12">
-          <div class="box-shadow-full">
-            <div class="title-box-2" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-              <h5 class="title-left" style="margin: 0;">
-                ProSiT — Process Simulation Tool
-              </h5>
-              <div style="display: flex; gap: 10px;">
-                <a href="https://github.com/franvinci/prosit-tool" target="_blank" rel="noopener" aria-label="GitHub">
-                  <span class="ico-circle" style="width: 40px; height: 40px; line-height: 40px; font-size: 18px;"><i class="ion-social-github"></i></span>
-                </a>
-                <a href="https://www.youtube.com/watch?v=ZN7ajI9-2NI&t=2s" target="_blank" rel="noopener" aria-label="Demo video">
-                  <span class="ico-circle" style="width: 40px; height: 40px; line-height: 40px; font-size: 18px;"><i class="fa fa-youtube-play"></i></span>
-                </a>
-              </div>
-            </div>
-            <p class="lead">
-              Open-source web application for <b>data-driven business process simulation</b>, built with Python, Flask, and Docker. ProSiT ingests <b>XES event logs</b> and automatically discovers simulation parameters (control flow, resource assignments, timing distributions, trace attributes) using <b>explainable ML models</b> including probabilistic decision trees and statistical distributions.
-            </p>
-            <p class="lead">
-              Supports interactive <b>what-if scenario</b> configuration, <b>discrete-event simulation</b>, and accuracy evaluation against real event data. Delivers visual analytics including process maps, cycle time distributions, and <b>resource utilization</b> heatmaps.
-            </p>
+
+        <div class="reveal" style="--delay: 0.2s">
+          <p class="contact-intro">Find me here:</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/francesco-vinci-1850621a3/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://github.com/franvinci" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=kcOgufsAAAAJ" target="_blank" rel="noopener" class="social-link" aria-label="Google Scholar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!--/ Section Software Tools End /-->
 
-  <!--/ Section Contact-Footer Star /-->
-  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(img/overlay-bg.png)">
-    <div class="overlay-mf"></div>
+  <!-- ===== Footer (DevPunks dark) ===== -->
+  <footer class="footer">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="contact-mf">
-            <div id="contact" class="box-shadow-full">
-              <div class="title-box-2">
-                <h5 class="title-left">
-                  Contact Me
-                </h5>
-              </div>
-              <div class="more-info">
-                    <p class="lead">
-                      If you are interested in my research, projects and more, please contact me :)
-                    </p>
-                    <ul class="list-ico">
-                      <li><span class="ion-ios-location"></span>Room 2CD8, Via Trieste, 63 - 35121 Padova</li>
-                      <li><span class="ion-email"></span>francesco.vinci@unipd.it</li>
-                      <li><span class="ion-email"></span>fvinci@math.unipd.it</li>
-                    </ul>
-                  </div>
-                  <div class="socials">
-                    <ul>
-                      <li><a href="https://www.linkedin.com/in/francesco-vinci-1850621a3/" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="ico-circle"><i class="ion-social-linkedin"></i></span></a></li>
-                      <li><a href="https://github.com/franvinci" target="_blank" rel="noopener" aria-label="GitHub"><span class="ico-circle"><i class="ion-social-github"></i></span></a></li>
-                      <li><a href="https://scholar.google.com/citations?user=kcOgufsAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><span class="ico-circle"><img src="foto/google-scholar-icon.svg" alt="Google Scholar" style="width: 24px; height: 24px;"></span></a></li>
-                    </ul>
-                  </div>
-              </div>
-            </div>
-          </div>
+      <div class="footer-inner">
+        <div class="footer-brand">Francesco<span>Vinci</span></div>
+        <div class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#cv">CV</a>
+          <a href="#publications" class="mode-researcher">Publications</a>
+          <a href="#software-tools" class="mode-developer">Software</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/francesco-vinci-1850621a3/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://github.com/franvinci" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=kcOgufsAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+          </a>
         </div>
       </div>
+      <div class="footer-bottom">&copy; 2026 Francesco Vinci. All rights reserved.</div>
     </div>
-  </section>
-  <!--/ Section Contact-footer End /-->
+  </footer>
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <div id="preloader"></div>
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
 
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/popper/popper.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/typed/typed.min.js"></script>
-  <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-
 </body>
 </html>
