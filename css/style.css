@@ -930,6 +930,11 @@ mark {
   text-underline-offset: 3px;
 }
 
+.cv-content p a {
+  font-size: inherit;
+  font-weight: 600;
+}
+
 .cv-download {
   margin-top: 56px;
   text-align: center;
@@ -1292,6 +1297,35 @@ body[data-mode="developer"] .map-pin-card span {
 .software-featured:hover {
   transform: scale(1.02);
   box-shadow: var(--shadow-lg);
+}
+
+.software-featured + .software-featured { margin-top: 20px; }
+
+.software-install {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gray-200);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  margin-top: 4px;
+}
+
+.software-install::before {
+  content: '$';
+  color: var(--carmine);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.software-install code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: none;
+  user-select: all;
 }
 
 /* Animated gradient border */
