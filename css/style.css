@@ -1031,7 +1031,6 @@ mark {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
-
 .map-pin-card strong {
   display: block;
   font-size: 0.75rem;
